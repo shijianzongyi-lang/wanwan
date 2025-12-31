@@ -6,10 +6,24 @@
   <title>ワンワン度診断</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Mochiy+Pop+One&display=swap');
     input[type=radio] {
       display: none;
     }
-    input[type="radio"]:checked + label {
+    input[name="quest1"]:checked + label {
+      background-color: #00a917;
+      color: #ffffff;
+    }
+    input[name="quest2"]:checked + label {
+      background-color: #00a917;
+      color: #ffffff;
+    }
+    input[name="quest3"]:checked + label {
+      /*color: #ffffff;*/
+      background-image: none, url(pawpads.jpg);
+      background-size: auto, 100%
+    }
+    input[name="quest4"]:checked + label {
       /*color: #ffffff;*/
       background-image: none, url(pawpads.jpg);
       background-size: auto, 100%
@@ -19,7 +33,40 @@
       font-weight: 400;
       font-style: normal;
     }
+    label {
+      font-family: "Kosugi Maru", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .sample_text24 {
+      position: relative;
+      /*font-weight: bold; */
+      margin: 0 auto 10px;
+    }
+    .sample_text24::before {
+      content: attr(data-number);
+      display: inline-block;
+      margin-right: 20px;
+      color: #77bcff;
+      font-size: 30px;
+      border-bottom: 3px solid #77bcff;
+    }
     .label {
+      display: block; /* ブロックレベル要素化する */
+      float: left; /* 要素の左寄せ・回り込を指定する */
+      margin: 3px; /* ボックス外側の余白を指定する */
+      width: 100%; /* ボックスの横幅を指定する*/
+      height: 45px; /* ボックスの高さを指定する */
+      padding-left: 2px; /* ボックス内左側の余白を指定する */
+      padding-right: 2px; /* ボックス内御右側の余白を指定する */
+      color: #000000; /* フォントの色を指定 */
+      font-size: 18px;
+      text-align: center; /* テキストのセンタリングを指定する */
+      line-height: 45px; /* 行の高さを指定する */
+      border: 2px solid #00a917;/* ボックスの境界線を実線で指定する */
+      border-radius: 23px; /* 角丸を指定する */
+    }
+    .label2 {
       display: block; /* ブロックレベル要素化する */
       float: left; /* 要素の左寄せ・回り込を指定する */
       margin: 3px; /* ボックス外側の余白を指定する */
@@ -35,6 +82,11 @@
       border-radius: 23px; /* 角丸を指定する */
     }
     .center {
+      width: 100%;
+      height: 50px;
+      display: inline-block;
+    }
+    .center2 {
       width: 60px;
       height: 50px;
       display: inline-block;
@@ -63,96 +115,99 @@
 <body>
   <h1>ワンワン度診断</h1>
   <p>設問</p>
-
-  <p class="popFont">＜第１問＞</p>
-  <p class="popFont">あなたの年齢は？</p>
-  <div>
+  <div class="sample_text24 popFont" data-number="01">
+    あなたの年齢は？
+  </div>
+  <div class="text-align: center">
     <div class="center">
       <input type="radio" name="quest1" value="a" id="q11"/>
-      <label for="q11" class="label"></label>
+      <label for="q11" class="label maruFont">５歳</label>
     </div>
     <div class="center">
       <input type="radio" name="quest1" value="b" id="q12"/>
-      <label for="q12" class="label"></label>
+      <label for="q12" class="label">１０代</label>
     </div>
     <div class="center">
       <input type="radio" name="quest1" value="c" id="q13"/>
-      <label for="q13" class="label"></label>
+      <label for="q13" class="label">２０代</label>
     </div>
     <div class="center">
       <input type="radio" name="quest1" value="d" id="q14"/>
-      <label for="q14" class="label"></label>
+      <label for="q14" class="label">その他</label>
     </div>
   </div>
 
-  <p>＜第２問＞</p>
-  <p>好きな食べ物は？</p>
+  <div class="sample_text24 popFont" data-number="02">
+    好きな食べ物は？
+  </div>
   <div>
     <div class="center">
       <input type="radio" name="quest2" value="e" id="q21"/>
-      <label for="q21" class="label"></label>
+      <label for="q21" class="label">にんじん🥕</label>
     </div>
     <div class="center">
       <input type="radio" name="quest2" value="f" id="q22"/>
-      <label for="q22" class="label"></label>
+      <label for="q22" class="label">納豆🥢</label>
     </div>
     <div class="center">
       <input type="radio" name="quest2" value="g" id="q23"/>
-      <label for="q23" class="label"></label>
+      <label for="q23" class="label">ピザ🍕</label>
     </div>
     <div class="center">
       <input type="radio" name="quest2" value="h" id="q24"/>
-      <label for="q24" class="label"></label>
+      <label for="q24" class="label">鯖🐟</label>
     </div>
   </div>
 
-  <p>＜第３問＞</p>
-  <p>いつも元気か？</p>
+  <div class="sample_text24 popFont" data-number="03">
+    いつも元気か？
+  </div>
   <div>
-    <div class="center">
+    <div class="center2">
       <input type="radio" name="quest3" value="i" id="q31"/>
-      <label for="q31" class="label"></label>
+      <label for="q31" class="label2"></label>
     </div>
-    <div class="center">
+    <div class="center2">
       <input type="radio" name="quest3" value="j" id="q32"/>
-      <label for="q32" class="label"></label>
+      <label for="q32" class="label2"></label>
     </div>
-    <div class="center">
+    <div class="center2">
       <input type="radio" name="quest3" value="k" id="q33"/>
-      <label for="q33" class="label"></label>
+      <label for="q33" class="label2"></label>
     </div>
-    <div class="center">
+    <div class="center2">
       <input type="radio" name="quest3" value="l" id="q34"/>
-      <label for="q34" class="label"></label>
+      <label for="q34" class="label2"></label>
     </div>
-    <div class="center">
+    <div class="center2">
       <input type="radio" name="quest3" value="m" id="q35"/>
-      <label for="q35" class="label"></label>
+      <label for="q35" class="label2"></label>
     </div>
   </div>
 
-  <p>＜第４問＞</p>
-  <p>暑さ・寒さに弱く疲れやすい</p>
+  <div class="sample_text24 popFont" data-number="04">
+    暑さ・寒さに弱く疲れやすい
+  </div>
   <div>
-    <div class="center">
+    <div class="center2">
       <input type="radio" name="quest4" value="n" id="q41"/>
-      <label for="q41" class="label"></label>
+      <label for="q41" class="label2"></label>
     </div>
-    <div class="center">
+    <div class="center2">
       <input type="radio" name="quest4" value="o" id="q42"/>
-      <label for="q42" class="label"></label>
+      <label for="q42" class="label2"></label>
     </div>
-    <div class="center">
+    <div class="center2">
       <input type="radio" name="quest4" value="p" id="q43"/>
-      <label for="q43" class="label"></label>
+      <label for="q43" class="label2"></label>
     </div>
-    <div class="center">
+    <div class="center2">
       <input type="radio" name="quest4" value="q" id="q44"/>
-      <label for="q44" class="label"></label>
+      <label for="q44" class="label2"></label>
     </div>
-    <div class="center">
+    <div class="center2">
       <input type="radio" name="quest4" value="r" id="q45"/>
-      <label for="q45" class="label"></label>
+      <label for="q45" class="label2"></label>
     </div>
   </div>
   <p>あてはまる≪・≫あてはまらない</p>
