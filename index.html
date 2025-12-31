@@ -105,7 +105,7 @@
       display: inline-block;
     }
     .queMargin{
-      margin-bottom: 30px
+      margin-bottom: 40px
     }
     .textLeft {
       float: left;
@@ -115,7 +115,7 @@
       text-align: right;
       color: #3880c9;
     }
-    button {
+    .button1 {
       width: 60px;
       height: 40px;
       font-size: 18px;
@@ -124,21 +124,32 @@
       color: #ffffff;
       background:rgb(74, 170, 239)
     }
+    .button2 {
+      width: 170px;
+      height: 40px;
+      font-size: 18px;
+      border: 0px solid #999;
+      border-radius: 5px;
+      color: #ffffff;
+      background:rgb(23, 172, 60)
+    }
     .nondisplay {
       display: none;
     }
     .resultDisplay {
       text-align: center;
+      margin: 40px 0 40px 0;
     }
     #output {
-      border: solid 3px gold;
       padding: 20px 10px;
+      font-size: 60px;
+      color: #77bcff;
     }
   </style>
 </head>
 <body>
-  <h1 class="popFont">🐶ワンワン度診断🐶</h1>
-  <p>設問</p>
+  <h1 class="popFont queMargin">🐶ワンワン度診断🐶</h1>
+  <p class="maruFont" style="text-align: center">４つの質問に答えてあなたのワンワン度を確かめよう！</p>
   <div class="sample_text24 popFont" data-number="01">
     あなたの年齢は？
   </div>
@@ -242,13 +253,14 @@
   </div>
   
 
-  <p style="text-align: center;">
-    <button>診断</button>
+  <p style="text-align: center;" id="btn">
+    <button class="button1 maruFont">診断</button>
   </p>
   <div class="nondisplay" id="result">
-    <p class=text-align:center>↓↓↓↓↓↓↓↓↓↓↓↓</p>
-    <p class="resultDisplay" id="output">ここに表示します</p>
-    <p>あいうえお</p>
+    <p class="resultDisplay maruFont">あなたのワンワン度は...<b id="output">100%</b></p>
+    <p style="text-align: center;" id="btn2">
+      <button class="button2 maruFont">もう一度診断する</button>
+    </p>
   </div>
   
 
