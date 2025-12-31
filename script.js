@@ -1,9 +1,11 @@
 'use strict';
 
 const p = document.getElementById('output');
+let btn = document.getElementById('btn');
 let div = document.getElementById('result');
 // ［表示］ボタンを押したら…
-document.querySelector('button').addEventListener('click', () => {
+btn.addEventListener('click', () => {
+  btn.classList.add('nondisplay')
   div.classList.remove('nondisplay');
   //入力結果まとめ
   const result = [0, 0, 0, 0];
@@ -73,5 +75,12 @@ document.querySelector('button').addEventListener('click', () => {
   } else {
     score = raw_score;
   }
-  p.textContent = `${result}を選んだあなたはワンワン度${score}％です`;
+  p.textContent = `${score}％`;
+});
+
+document.getElementById('btn2').addEventListener('click', () => {
+  window.location.reload();
+  window.scroll({
+    top: 0,
+  });
 });
