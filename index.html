@@ -7,6 +7,9 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Mochiy+Pop+One&display=swap');
+    h1 {
+      text-align: center;
+    }
     input[type=radio] {
       display: none;
     }
@@ -33,10 +36,14 @@
       font-weight: 400;
       font-style: normal;
     }
-    label {
+    .maruFont {
       font-family: "Kosugi Maru", sans-serif;
       font-weight: 400;
       font-style: normal;
+    }
+    .textWeight {
+      font-weight: bold;
+      margin-bottom: 30px
     }
     .sample_text24 {
       position: relative;
@@ -50,6 +57,13 @@
       color: #77bcff;
       font-size: 30px;
       border-bottom: 3px solid #77bcff;
+    }
+    .circles {
+      flex: 0 0 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px
     }
     .label {
       display: block; /* ブロックレベル要素化する */
@@ -70,26 +84,36 @@
       display: block; /* ブロックレベル要素化する */
       float: left; /* 要素の左寄せ・回り込を指定する */
       margin: 3px; /* ボックス外側の余白を指定する */
-      width: 40px; /* ボックスの横幅を指定する*/
-      height: 45px; /* ボックスの高さを指定する */
-      padding-left: 2px; /* ボックス内左側の余白を指定する */
-      padding-right: 2px; /* ボックス内御右側の余白を指定する */
+      width: 51px; /* ボックスの横幅を指定する*/
+      height: 55px; /* ボックスの高さを指定する */
+      padding: 0 2px 0 2px; /* ボックス内(上・右・下・左)の余白を指定する */
       color: #000000; /* フォントの色を指定 */
       font-size: 18px;
       text-align: center; /* テキストのセンタリングを指定する */
       line-height: 45px; /* 行の高さを指定する */
       border: 2px solid #00a917;/* ボックスの境界線を実線で指定する */
-      border-radius: 23px; /* 角丸を指定する */
+      border-radius: 30px; /* 角丸を指定する */
     }
     .center {
-      width: 100%;
+      width: 97%;
       height: 50px;
       display: inline-block;
     }
     .center2 {
       width: 60px;
-      height: 50px;
+      height: 60px;
       display: inline-block;
+    }
+    .queMargin{
+      margin-bottom: 30px
+    }
+    .textLeft {
+      float: left;
+      color: #db4f2f;
+    }
+    .textRight {
+      text-align: right;
+      color: #3880c9;
     }
     button {
       width: 60px;
@@ -113,12 +137,12 @@
   </style>
 </head>
 <body>
-  <h1>ワンワン度診断</h1>
+  <h1 class="popFont">🐶ワンワン度診断🐶</h1>
   <p>設問</p>
   <div class="sample_text24 popFont" data-number="01">
     あなたの年齢は？
   </div>
-  <div class="text-align: center">
+  <div class="maruFont queMargin">
     <div class="center">
       <input type="radio" name="quest1" value="a" id="q11"/>
       <label for="q11" class="label maruFont">５歳</label>
@@ -140,7 +164,7 @@
   <div class="sample_text24 popFont" data-number="02">
     好きな食べ物は？
   </div>
-  <div>
+  <div class="maruFont queMargin">
     <div class="center">
       <input type="radio" name="quest2" value="e" id="q21"/>
       <label for="q21" class="label">にんじん🥕</label>
@@ -162,7 +186,7 @@
   <div class="sample_text24 popFont" data-number="03">
     いつも元気か？
   </div>
-  <div>
+  <div class="circles">
     <div class="center2">
       <input type="radio" name="quest3" value="i" id="q31"/>
       <label for="q31" class="label2"></label>
@@ -184,11 +208,14 @@
       <label for="q35" class="label2"></label>
     </div>
   </div>
+  <div class="maruFont textWeight">
+    <div class="textLeft">あてはまる</div><div class="textRight">あてはまらない</div>
+  </div>
 
   <div class="sample_text24 popFont" data-number="04">
     暑さ・寒さに弱く疲れやすい
   </div>
-  <div>
+  <div class="circles">
     <div class="center2">
       <input type="radio" name="quest4" value="n" id="q41"/>
       <label for="q41" class="label2"></label>
@@ -210,12 +237,16 @@
       <label for="q45" class="label2"></label>
     </div>
   </div>
-  <p>あてはまる≪・≫あてはまらない</p>
+  <div class="maruFont textWeight">
+    <div class="textLeft">あてはまる</div><div class="textRight">あてはまらない</div>
+  </div>
+  
 
   <p style="text-align: center;">
     <button>診断</button>
   </p>
   <div class="nondisplay" id="result">
+    <p class=text-align:center>↓↓↓↓↓↓↓↓↓↓↓↓</p>
     <p class="resultDisplay" id="output">ここに表示します</p>
     <p>あいうえお</p>
   </div>
