@@ -3,10 +3,17 @@
 const p = document.getElementById('output');
 let btn = document.getElementById('btn');
 let div = document.getElementById('result');
+let btm = document.documentElement;
+
 // ［表示］ボタンを押したら…
 btn.addEventListener('click', () => {
   btn.classList.add('nondisplay')
   div.classList.remove('nondisplay');
+  let bottom = btm.scrollHeight - btm.clientHeight;
+  window.scroll({
+    top: bottom,
+    behavior: "smooth"
+  });
   //入力結果まとめ
   const result = [0, 0, 0, 0];
   const radio1 = document.getElementsByName('quest1');
@@ -77,7 +84,7 @@ btn.addEventListener('click', () => {
   }
   
   //カウントアップ
-  const refresh = Math.round(2000 / score);
+  const refresh = Math.round(2000 / score); //カウント時間(ミリ秒)
   var scores = document.getElementById('output');
   scores.setAttribute('data-num', score);
   const counters = document.querySelectorAll(".counter");
@@ -104,7 +111,7 @@ btn.addEventListener('click', () => {
   share_twitter.setAttribute(
 	  "href",
 	  "https://twitter.com/share?url=" + "https://shijianzongyi-lang.github.io/wanwan/" + "&text=" + share_title + "&hashtags=ワンワン度診断"
-);
+  );
 });
 
 document.getElementById('btn2').addEventListener('click', () => {
