@@ -150,13 +150,26 @@
     }
     .share_button {
 	    display: inline-block;
-    	padding: 8px 24px;
+    	padding: 8px 12px;
 	    border-radius: 8px;
 	    color: #fff;
 	    background-color: #333;
 	    text-decoration: none;
 	    transition: 0.4s;
-      background-color: #1da1f2;
+      background-color: #000000;
+      width: 120px; /*ボタン横幅指定*/
+    }
+    .flex {
+      display: flex; /*横並び*/
+      align-items: center;
+    }
+    .flex .image {
+      height: 20px; /*画像サイズ指定*/
+      width: 20px; /*画像サイズ指定*/
+      margin: 0 10px 0 0; /*画像外側余白指定*/
+      padding: 0;
+      overflow: hidden;
+      position: relative;
     }
   </style>
 </head>
@@ -273,11 +286,13 @@
     <p class="resultDisplay maruFont">あなたのワンワン度は...<b id="output" class="counter output underLine">0</b><b class="output underLine">％</b></p>
     <a
 	    id="js-share-twitter"
-	    class="share_button share_twitter maruFont"
+	    class="share_button share_twitter maruFont flex"
 	    href=""
     	target="_blank"
 	    rel="nofollow noopener noreferrer"
-	  >Xで共有する</a>
+	  ><img src="logo-white.png" alt="" class="image">ポストする</a>
+    
+
     <p style="text-align: center;" id="btn2">
       <button class="button2 maruFont">もう一度診断する</button>
     </p>
